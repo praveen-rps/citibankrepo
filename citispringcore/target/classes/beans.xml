@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="p" class="citispringcore.Person">
+		<constructor-arg value="Satish" />
+		<constructor-arg value="Bangalore" />
+		<constructor-arg ref="d1"/>
+
+	</bean>
+
+	<bean id="d1" class="citispringcore.Department">
+		<constructor-arg value="2001" />
+		<constructor-arg value="Quality" />
+
+
+	</bean>
+
+
+
+	<bean id="emp" class="citispringcore.Employee" scope="prototype">
+		<property name="name" value="Praveen" />
+		<property name="dept" value="Finance" />
+		<property name="address" ref="addr" />
+	</bean>
+
+	<bean id="addr" class="citispringcore.Address">
+		<property name="dno" value="520" />
+		<property name="street" value="MG Road" />
+		<property name="city" value="Bangalore" />
+	</bean>
+
+
+</beans>
